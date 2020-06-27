@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any}', function () {
     return view('app');
-});
+})->where('any','.*');
 
 Route::match(['get','post'],'/financiera','loginController@login');
 Route::match(['get', 'post'], '/salir','loginController@logout');
